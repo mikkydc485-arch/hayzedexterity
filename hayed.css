@@ -7,6 +7,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
+		display:none;
     }
 
 
@@ -751,4 +752,5 @@
 	color: gold;
 	font-weight: 500;
 	font-size: 15px;
+
 }
