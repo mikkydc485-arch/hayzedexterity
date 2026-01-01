@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hayzed Dexterity</title>
+	<link rel="stylesheet" href="hayed.css">
+	<link rel="icon"  href="Image/tile.jpg">
+</head>
+<body>
+  <header class="header">
+  	<div class="brand">
+    <div class="logo">Hayzed Dexterity</div>
+    <div class="tagline">Interior & Exterior Decorating with Precision and Style</div>
+  </div>
+  <button onclick="document.location='file:///C:/Users/PC/Desktop/mmm/port.html'">Portfolio</button>
+</header>
+  <div class="slider-container">
+  <div class="slider">
+
+    <div class="slide active">
+      <img src="Image/tile.jpg">
+      <div class="caption">Luxury Living</div>
+    </div>
+
+    <div class="slide">
+      <img src="Image/gy.jpg">
+      <div class="caption">Modern Elegance</div>
+    </div>
+
+    <div class="slide">
+      <img src="Image/kkk.jpg">
+      <div class="caption">Timeless Design</div>
+    </div>
+
+    <div class="slide">
+      <img src="Image/jason.jpg">
+      <div class="caption">Premium Comfort</div>
+    </div>
+
+    <div class="slide">
+      <img src="Image/tile.jpg">
+      <div class="caption">Architectural Beauty</div>
+    </div>
+
+    <div class="slide">
+      <img src="Image/iii.jpg">
+      <div class="caption">Exceptional Experience</div>
+    </div>
+
+  </div>
+
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+
+<script>
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let index = 0;
+let interval;
+
+function showSlide(i) {
+  if (i < 0) i = slides.length - 1;
+  if (i >= slides.length) i = 0;
+
+  slider.style.transform = `translateX(-${i * 100}%)`;
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[i].classList.add('active');
+  index = i;
+}
+
+function nextSlide() {
+  showSlide(index + 1);
+}
+
+function prevSlide() {
+  showSlide(index - 1);
+}
+
+prev.addEventListener('click', () => {
+  prevSlide();
+  resetAuto();
+});
+
+next.addEventListener('click', () => {
+  nextSlide();
+  resetAuto();
+});
+
+function startAuto() {
+  interval = setInterval(nextSlide, 5000);
+}
+
+function resetAuto() {
+  clearInterval(interval);
+  startAuto();
+}
+
+/* Swipe for mobile */
+let startX = 0;
+
+slider.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) nextSlide();
+  if (endX - startX > 50) prevSlide();
+  resetAuto();
+});
+
+startAuto();
+</script>
+<section class="value-section">
+  <div class="value-wrapper">
+
+    <!-- TEXT CONTENT -->
+    <div class="value-text reveal">
+      <span class="section-tag">WHO WE ARE</span>
+
+      <h2>Designing Spaces That Inspire, Elevate & Endure</h2>
+
+      <p class="intro">
+        Hayzed Dexterity is a premium interior and exterior decorating brand
+        committed to transforming ordinary spaces into elegant, functional,
+        and timeless environments. We blend creativity, technical precision,
+        and refined aesthetics to deliver spaces that truly reflect your vision.
+      </p>
+
+      <p>
+        From residential homes to commercial environments, our approach is
+        deeply collaborative — ensuring every design choice aligns with your
+        lifestyle, brand identity, and long-term comfort.
+      </p>
+
+      <!-- VALUE POINTS -->
+      <div class="value-points">
+        <div class="point-card">
+          <div class="icon">★</div>
+          <h4>Uncompromising Quality</h4>
+          <p>
+            We use premium materials, refined finishes, and proven techniques
+            to ensure every project stands the test of time.
+          </p>
+        </div>
+
+        <div class="point-card">
+          <div class="icon">✦</div>
+          <h4>Precision & Detail</h4>
+          <p>
+            Every line, texture, color, and spatial relationship is carefully
+            planned and executed with architectural accuracy.
+          </p>
+        </div>
+
+        <div class="point-card">
+          <div class="icon">⬤</div>
+          <h4>Proven Experience</h4>
+          <p>
+            Years of hands-on experience across diverse projects allow us to
+            deliver confidence, reliability, and excellence.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="value-cta">
+        <a href="file:///C:/Users/PC/Desktop/mmm/port.html" class="btn primary">View Our Portfolio</a>
+        <a href="https://wa.me/+2348034141353" class="btn outline">Get Free Consultation</a>
+      </div>
+    </div>
+
+    <!-- IMAGE CONTENT -->
+    <div class="value-image reveal">
+      <img src="Image/kkk.jpg" alt="Interior Design">
+      <div class="image-overlay">
+        <span>Crafted with Precision</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.25 });
+
+reveals.forEach(el => observer.observe(el));
+
+/* Parallax image */
+window.addEventListener('scroll', () => {
+  const img = document.querySelector('.value-image img');
+  const section = document.querySelector('.value-section');
+  const rect = section.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    img.style.transform =
+      `translateY(${rect.top * 0.08}px) scale(1.1)`;
+  }
+});
+</script>
+<section class="services-section">
+  <div class="container">
+    <span class="section-tag">OUR SERVICES</span>
+    <h2>Transforming Spaces With Expertise</h2>
+    <p class="intro">
+      From interiors to exteriors, we provide tailored solutions that combine style, function, and innovation.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="icon">🏠</div>
+        <h4>Interior Decoration</h4>
+        <p>Elegant designs that reflect your personality and lifestyle.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">🏢</div>
+        <h4>Exterior Design</h4>
+        <p>Stunning exteriors that make your building stand out with style.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">📐</div>
+        <h4>Space Planning</h4>
+        <p>Optimizing every corner for functionality, flow, and aesthetic appeal.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">🎨</div>
+        <h4>Color Consultation</h4>
+        <p>Perfect color combinations to enhance mood, style, and cohesion.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">🛠️</div>
+        <h4>Renovation & Finishing</h4>
+        <p>Transform old spaces into modern, luxurious environments.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon">💡</div>
+        <h4>Lighting & Ambience</h4>
+        <p>Professional lighting solutions to create the perfect atmosphere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+const serviceReveals = document.querySelectorAll('.service-card');
+
+const observerServices = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, {threshold:0.3});
+
+serviceReveals.forEach(card => observerServices.observe(card));
+</script>
+<section class="why-us-section">
+  <div class="container">
+    <span class="section-tag">WHY CHOOSE US</span>
+    <h2>Trusted by Hundreds, Loved by Many</h2>
+    <p class="intro">
+      Hayzed Dexterity delivers precision, style, and excellence. Here’s why clients choose us over others.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="number" data-target="600">0</div>
+        <p>Happy Clients</p>
+      </div>
+
+      <div class="stat-card reveal">
+        <div class="number" data-target="99.">0</div>
+        <p>% Client Satisfaction</p>
+      </div>
+
+      <div class="stat-card reveal">
+        <div class="number" data-target="450">0</div>
+        <p>Completed Projects</p>
+      </div>
+
+      <div class="stat-card reveal">
+        <div class="number" data-target="21">0</div>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+
+    <div class="why-cta">
+      <a href="https://wa.me/+2348034141353" class="btn primary">Get Your Free Consultation</a>
+    </div>
+  </div>
+</section>
+<script>
+// Scroll reveal
+const statReveal = document.querySelectorAll('.reveal');
+const observerStats = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+
+      // Counter animation
+      const number = entry.target.querySelector('.number');
+      if(number && !number.classList.contains('counted')){
+        const target = +number.dataset.target;
+        let count = 0;
+        const increment = target / 100; // smooth speed
+        const interval = setInterval(()=>{
+          count += increment;
+          if(count >= target){
+            count = target;
+            clearInterval(interval);
+          }
+          number.textContent = Math.round(count);
+        }, 20);
+        number.classList.add('counted');
+      }
+    }
+  });
+},{threshold:0.3});
+
+statReveal.forEach(card => observerStats.observe(card));
+</script>
+<section class="testimonials-section">
+  <div class="container">
+    <span class="section-tag">TESTIMONIALS</span>
+    <h2>What Our Clients Say</h2>
+    <p class="intro">
+      Hear directly from our satisfied clients who experienced the Hayzed Dexterity touch.
+    </p>
+
+    <!-- Slider with arrows -->
+    <div class="testimonials-slider-wrapper">
+      <button class="arrow prev">&#10094;</button>
+      <div class="testimonials-slider">
+        <div class="testimonial-card reveal">
+          <p>
+            "Hayzed Dexterity transformed our living space beyond our expectations! The attention to detail and creativity is unmatched."
+          </p>
+          <h4>- Mrs. Adeola</h4>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p>
+            "Professional, precise, and elegant. Our office renovation was seamless and beautiful!"
+          </p>
+          <h4>- Mr. Chukwu</h4>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p>
+            "Every corner of our home now reflects comfort and style. Truly a remarkable experience."
+          </p>
+          <h4>- Mrs. Fatima</h4>
+        </div>
+      </div>
+      <button class="arrow next">&#10095;</button>
+    </div>
+
+    <div class="testimonial-cta">
+      <a href="https://g.page/r/CfSn_kzSBo98EBM/review" target="_blank" class="btn primary">
+        Read More Reviews ➜
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+// Scroll reveal
+const testimonialReveal = document.querySelectorAll('.testimonial-card');
+const observerTestimonials = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.3});
+
+testimonialReveal.forEach(card => observerTestimonials.observe(card));
+
+// Slider functionality
+const slider = document.querySelector('.testimonials-slider');
+const slides = document.querySelectorAll('.testimonial-card');
+const prevBtn = document.querySelector('.arrow.prev');
+const nextBtn = document.querySelector('.arrow.next');
+let currentIndex = 0;
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
+});
+</script>
+<section class="map-section">
+  <div class="container">
+    <h2>Find Us Here</h2>
+    <p class="intro">
+      Visit our office or get in touch with us directly. We’re always happy to discuss your next project!
+    </p>
+
+    <div class="map-wrapper">
+      <!-- Google Map iframe -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d506727.87706039415!2d3.3211267773723683!3d7.147778246819484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shayzed%20dextirity!5e0!3m2!1sen!2sng!4v1767090392776!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-about">
+      <div class="footer-logo">Hayzed Dexterity</div>
+      <p>Designing and decorating spaces with precision and style. Your dream space starts here!</p>
+    </div>
+
+    <!-- Contact Info + Socials + Mini Map -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍  49VC+MM4 Evergreen area,kemta, Abeokuta, Nigeria</p>
+      <p>📞 +234 8034141353</p>
+      <p>✉ hayzeddexterity@email.com</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Hayzed Dexterity. All Rights Reserved. | Designed by <span class="designer"><a href="https://wa.me/+2347034204906">Kunle Tech</a></span></p></p>
+  </div>
+</footer>
+
+</body>
+</html>

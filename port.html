@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Portfolio</title>
+	<link rel="icon"  href="Image/tile.jpg">
+</head>
+<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+	.portfolio-hero {
+  position: relative;
+  height: 70vh;
+  background: url("Image/cfr.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  animation: fadeDown 1.2s ease;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+}
+
+.hero-content p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 60px 100px;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  animation: fadeUp 1s ease;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.project:hover img {
+  transform: scale(1.15);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project:hover .project-overlay {
+  opacity: 1;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.portfolio-cta {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background: #b88e2f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  background: #9c7524;
+}
+.portfolio-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  background: #111;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.portfolio-stats h2 {
+  color: #b88e2f;
+  font-size: 3rem;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:40px 20px 80px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:24px;
+}
+
+/* GRID ITEM */
+.item{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  background:#111827;
+}
+
+/* IMAGE */
+.item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .8s cubic-bezier(.16,1,.3,1);
+}
+
+/* HOVER EFFECT */
+.item:hover img{
+  transform:scale(1.08);
+}
+
+.pp{
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  font-size: 17px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+</style>
+<body>
+<section class="portfolio-hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Our Portfolio</h1>
+    <p>Crafting elegant interiors and stunning exteriors with precision and style.</p>
+      <a href="file:///C:/Users/PC/Desktop/wasiu%20web/hayed.html#" class="cta-btn">Go Back Home →</a>
+  </div>
+</section>
+
+  <p class="pp">To view more images contact us.</p>
+<main class="container">
+  <section class="grid">
+
+    <!-- IMAGE ITEM -->
+    <div class="item"><img src="Image/tile.jpg" alt="ff"></div>
+    <div class="item"><img src="Image/1.jpg" alt=""></div>
+    <div class="item"><img src="Image/2.jpg" alt=""></div>
+    <div class="item"><img src="image/3.jpg" alt=""></div>
+    <div class="item"><img src="Image/4.jpg" alt=""></div>
+    <div class="item"><img src="Image/5.jpg" alt=""></div>
+    <div class="item"><img src="Image/6.jpg" alt=""></div>
+    <div class="item"><img src="image/7.jpg" alt=""></div>
+     <div class="item"><img src="Image/8.jpg" alt="ff"></div>
+    <div class="item"><img src="Image/9.jpg" alt=""></div>
+    <div class="item"><img src="Image/10.jpg" alt=""></div>
+    <div class="item"><img src="image/jason.jpg" alt=""></div>
+    <div class="item"><img src="Image/11.jpg" alt=""></div>
+    <div class="item"><img src="Image/bh.jpg" alt=""></div>
+    <div class="item"><img src="Image/kkk.jpg" alt=""></div>
+    <div class="item"><img src="image/gy.jpg" alt=""></div>
+
+ <div class="item"><img src="Image/iii.jpg" alt=""></div>
+    <div class="item"><img src="Image/exte.jpg" alt=""></div>
+    <div class="item"><img src="Image/11.jpg" alt=""></div>
+    <div class="item"><img src="image/12.jpg" alt=""></div>
+    <div class="item"><img src="Image/13.jpg" alt=""></div>
+    <div class="item"><img src="Image/14.jpg" alt=""></div>
+    <div class="item"><img src="Image/15.jpg" alt=""></div>
+    <div class="item"><img src="image/16.jpg" alt=""></div>
+
+ <div class="item"><img src="Image/17.jpg" alt="ff"></div>
+    <div class="item"><img src="Image/18.jpg" alt=""></div>
+    <div class="item"><img src="Image/19.jpg" alt=""></div>
+    <div class="item"><img src="image/20.jpg" alt=""></div>
+    <div class="item"><img src="Image/21.jpg" alt=""></div>
+    <div class="item"><img src="Image/22.jpg" alt=""></div>
+    <div class="item"><img src="Image/23.jpg" alt=""></div>
+    <div class="item"><img src="image/24.jpg" alt=""></div>
+
+ <div class="item"><img src="Image/25.jpg" alt="ff"></div>
+    <div class="item"><img src="Image/26.jpg" alt=""></div>
+    <div class="item"><img src="Image/27.jpg" alt=""></div>
+    <div class="item"><img src="image/28.jpg" alt=""></div>
+    <div class="item"><img src="Image/29.jpg" alt=""></div>
+    <div class="item"><img src="Image/30.jpg" alt=""></div>
+    <div class="item"><img src="Image/31.jpg" alt=""></div>
+    <div class="item"><img src="image/32.jpg" alt=""></div>
+
+ <div class="item"><img src="Image/33.jpg" alt="ff"></div>
+    <div class="item"><img src="Image/34.jpg" alt=""></div>
+    <div class="item"><img src="Image/35.jpg" alt=""></div>
+    <div class="item"><img src="image/36.jpg" alt=""></div>
+    <div class="item"><img src="Image/37.jpg" alt=""></div>
+    <div class="item"><img src="Image/38.jpg" alt=""></div>
+    <div class="item"><img src="Image/39.jpg" alt=""></div>
+    <div class="item"><img src="image/40.jpg" alt=""></div>
+
+ <div class="item"><img src="Image/41.jpg" alt="ff"></div>
+    <div class="item"><img src="Image/42.jpg" alt=""></div>
+  
+  </section>
+</main>
+<section class="portfolio-cta">
+  <h2>Inspired by Our Work?</h2>
+  <p>Let’s bring your vision to life with elegance and precision.</p>
+  <a href="https://wa.me/+2348034141353" class="cta-btn">Start Your Project →</a>
+</section>
+
+</body>
+</html>
